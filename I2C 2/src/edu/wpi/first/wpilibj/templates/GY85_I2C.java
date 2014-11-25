@@ -9,6 +9,7 @@ public class GY85_I2C implements Runnable{
     private I2C cread, cwrite;
     private I2C gread, gwrite;
     private I2C aread, awrite;
+    int c;
     
     boolean clear = true;
     
@@ -26,7 +27,7 @@ public class GY85_I2C implements Runnable{
         accelBuffer = new byte[accelByte];
         t = new Timer();
         (new Thread(new GY85_I2C())).start();
-        
+        c = 0;
     }
 
     public void run(){
